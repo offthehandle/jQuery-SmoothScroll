@@ -49,7 +49,7 @@
                     .find($(settings.link).not(settings.exclude.toString()))
                     .not($('#' + settings.topWidgetId))
                     .not($('.' + settings.pageTopClass))
-                    .not($(settings.excludeWithin.toString()).find(settings.link)).on('click', function (e) {
+                    .not($(settings.excludeWithin.toString()).find(settings.link)).on('click.smoothScroll', function (e) {
                         e.preventDefault();
 
                         // Assigns bookmark location and passes it to the global scroll function
@@ -62,7 +62,7 @@
                     .find($(settings.link).not(settings.exclude.toString()))
                     .not($('#' + settings.topWidgetId))
                     .not($('.' + settings.pageTopClass))
-                    .not($(settings.excludeWithin.toString()).find(settings.link)).on('click', function (e) {
+                    .not($(settings.excludeWithin.toString()).find(settings.link)).on('click.smoothScroll', function (e) {
                         e.preventDefault();
 
                         // Assigns bookmark location and passes it to the global scroll function
@@ -86,7 +86,7 @@
             scrollTopimg.appendTo('#' + settings.topWidgetId);
 
             // Click event for the top widget
-            $('#' + settings.topWidgetId).on('click', function (e) {
+            $('#' + settings.topWidgetId).on('click.smoothScroll', function (e) {
                 e.preventDefault();
 
                 // Top widget start callback
@@ -117,7 +117,7 @@
 
         // Executed if page top link is activated
         if (settings.pageTopLink === true) {
-            $('.' + settings.pageTopClass).on('click', function (e) {
+            $('.' + settings.pageTopClass).on('click.smoothScroll', function (e) {
                 e.preventDefault();
 
                 // Page top start callback
