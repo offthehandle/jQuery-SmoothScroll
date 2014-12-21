@@ -6,8 +6,8 @@
  * http://opensource.org/licenses/MIT
  * 
  * Author: Adam J De Lucia
- * Skin Version: 1.0.0 (Smooth Scroll 1.0.0)
- * Date: December 17, 2014
+ * Skin Version: 1.0.0 (Smooth Scroll 1.0.1)
+ * Date: December 21, 2014
  * 
  */
 #scroll-to-top{position:fixed;right:40px;bottom:100px;cursor:pointer;color:#fff;background-color:#666;-webkit-border-radius:50px;-moz-border-radius:50px;-ms-border-radius:50px;-o-border-radius:50px;border-radius:50px;opacity:.4;filter:alpha(opacity=40);padding:10px}#scroll-to-top:hover,#scroll-to-top:active,#scroll-to-top:focus{opacity:1;filter:alpha(opacity=100)}
