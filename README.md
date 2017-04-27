@@ -1,7 +1,6 @@
 ### Quick links
 - [jQuery Smooth Scroll](#jquery-smooth-scroll)
 - [Installation](#installation)
-    - [Configuration](#configuration)
     - [Install with NuGet](#install-with-nuget)
 - [Options](#options)
     - [Container](#container)
