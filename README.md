@@ -66,17 +66,17 @@ See below for the complete configuration with default settings.
   offsetTop: 0
 ```
 
-#### Container
+### Container
 The `container` option sets a CSS selector within which all bookmark links will be contained.
 
-#### Containers Array
+### Containers Array
 The `containersArray` option allows an array of strings to be set for multiple containers. When the `container` or `containersArray` option is set, even a match to the `link` selector will not be activated unless it exists inside the specified container(s).
 
-#### Exclude
+### Exclude
 The `exclude` option specifies selectors that should not be Smooth Scroll enabled. Below is a use case for this option.
 * Exclude offsite links in a nav element
 
-##### Example 1
+#### Example 1
 
 ###### HTML
 ```html
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
 Another options is to create an opt-in class. Smooth Scroll simply provides options to suit your preference with the most efficient flow in mind for your project.
 
-##### Example 2
+#### Example 2
 
 ###### HTML
 ```html
