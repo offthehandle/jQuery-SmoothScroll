@@ -30,6 +30,7 @@
         - [Top Widget Callbacks](#top-widget-callbacks)
             - [Top Widget Setup](#top-widget-setup)
             - [Top Widget On Resize](#top-widget-on-resize)
+                - [Top Widget On Resize Example](#top-widget-on-resize-example)
             - [Top Widget Resize Timeout](#top-widget-resize-timeout)
 
 # jQuery Smooth Scroll
@@ -309,6 +310,17 @@ The `topWidgetSetup` is a callback. It fires on page start after the widget is c
 
 ##### Top Widget On Resize
 The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
+
+###### Top Widget On Resize Example
+```javascript
+$(document).ready(function () {
+  $.smoothScroll({
+    topWidgetOnResize: function () {
+      this.css('right', $('.container').offset().left + 15 + 'px');
+    }
+  });
+});
+```
 
 ##### Top Widget Resize Timeout
 The `topWidgetResizeTimeout` is the duration of the timeout to optimize the `topWidgetOnResize` callback. You can delay the execution of the callback to allow other resize events to complete by setting this value higher. Setting it to 0 will execute the callback immediately.
