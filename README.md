@@ -253,7 +253,7 @@ $(document).ready(function () {
 ```
 
 #### Callbacks
-The callbacks have 1 argument: `loc`, the href value of the element that triggered the scroll. The callbacks have `this` is set to the specific jQuery Object that triggered the scroll.
+The callbacks have 1 argument: `loc`, the href value of the element that triggered the scroll. The callbacks have `this` set to the specific jQuery Object that triggered the scroll.
 
 ### Page Top Options
 The page top feature is used to trigger a scroll to page top from anywhere on the page.
