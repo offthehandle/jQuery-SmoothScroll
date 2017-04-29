@@ -19,15 +19,18 @@
             - [Exclude Within Example](#exclude-within-example)
         - [Offset Top](#offset-top)
             - [Offset Top Example](#offset-top-example)
+        - [Bookmark Callbacks](#bookmark-callbacks)
     - [Page Top Options](#page-top-options)
         - [Page Top Class](#page-top-class)
+        - [Page Top Callbacks](#page-top-callbacks)
     - [Top Widget Options](#top-widget-options)
         - [Top Widget Id](#top-widget-id)
         - [Top Widget Image Url](#top-widget-image-url)
         - [Top Widget Threshold](#top-widget-threshold)
-        - [Top Widget Setup](#top-widget-setup)
-        - [Top Widget On Resize](#top-widget-on-resize)
-        - [Top Widget Resize Timeout](#top-widget-resize-timeout)
+        - [Top Widget Callbacks](#top-widget-callbacks)
+            - [Top Widget Setup](#top-widget-setup)
+            - [Top Widget On Resize](#top-widget-on-resize)
+            - [Top Widget Resize Timeout](#top-widget-resize-timeout)
 
 # jQuery Smooth Scroll
 
@@ -252,7 +255,7 @@ $(document).ready(function () {
 });
 ```
 
-#### Callbacks
+#### Bookmark Callbacks
 The callbacks have 1 argument: `loc`, the href value of the element that triggered the scroll. The callbacks have `this` set to the specific jQuery Object that triggered the scroll.
 
 ### Page Top Options
@@ -270,7 +273,7 @@ The page top feature is used to trigger a scroll to page top from anywhere on th
 #### Page Top Class
 The `pageTopClass` specifies the class name that will be used to trigger a scroll to page top. The `.` is not required before the value since it must be a class name.
 
-#### Callbacks
+#### Page Top Callbacks
 The callbacks have `this` set to the specific jQuery Object that triggered the scroll.
 
 ### Top Widget Options
@@ -291,19 +294,21 @@ The top widget is used to scroll back to page top and appears after the user has
 ```
 
 #### Top Widget Id
-The `topWidgetId` specifies the id of the top widget element. The `#` is not required before the value since it must be an id.
+The `topWidgetId` specifies the id of the top widget element. The `#` is not required before the value since it is an id.
 
 #### Top Widget Image Url
-The `topWidgetImageUrl` specifies the path of the image use as the scroll top arrow. An image is provided. If you use an image with a different name or location, you must update this option.
+The `topWidgetImageUrl` specifies the path of the image to use as the scroll top arrow. An image is provided. If you use an image with a different name or location, update this option.
 
 #### Top Widget Threshold
 The `topWidgetThreshold` specifies the number of pixels the scroll position is from the bottom of the page when the widget appears.
 
-#### Top Widget Setup
+#### Top Widget Callbacks
+
+##### Top Widget Setup
 The `topWidgetSetup` is a callback. It fires on page start after the widget is created. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
 
-#### Top Widget On Resize
+##### Top Widget On Resize
 The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
 
-#### Top Widget Resize Timeout
+##### Top Widget Resize Timeout
 The `topWidgetResizeTimeout` is the duration of a timeout to optimize the `topWidgetOnResize` callback. You can delay the execution of the callback to allow other resize events to complete by setting this value higher. Setting it to 0 will execute the callback immediately.
