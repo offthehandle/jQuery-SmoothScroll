@@ -5,7 +5,7 @@
 - [Options](#options)
     - [Container](#container)
     - [Containers Array](#containers-array)
-    - [Exclude](#exclude)
+    - [Link and Exclude](#link-and-exclude)
         - [Example 1](#example-1)
         - [Example 2](#example-2)
     - [Exclude Within](#exclude-within)
@@ -74,8 +74,8 @@ The `container` option sets a CSS selector within which all bookmark links will 
 ### Containers Array
 The `containersArray` option allows an array of strings to be set for multiple containers. When the `container` or `containersArray` option is set, even a match to the `link` selector will not be activated unless it exists inside the specified container(s).
 
-### Exclude
-The `exclude` option specifies selectors that should not be Smooth Scroll enabled. Below is a use case for this option.
+### Link and Exclude
+The `link` option specifies selectors that should have Smooth Scroll bookmarks enabled. When you enable `link` on generic elements, like `a`, you can exclude a subset of links that should not be Smooth Scroll enabled using the `exclude` option. See the use cases below.
 * Exclude offsite links in a nav element
 
 #### Example 1
