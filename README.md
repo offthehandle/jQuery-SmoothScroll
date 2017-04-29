@@ -311,4 +311,4 @@ The `topWidgetSetup` is a callback. It fires on page start after the widget is c
 The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
 
 ##### Top Widget Resize Timeout
-The `topWidgetResizeTimeout` is the duration of a timeout to optimize the `topWidgetOnResize` callback. You can delay the execution of the callback to allow other resize events to complete by setting this value higher. Setting it to 0 will execute the callback immediately.
+The `topWidgetResizeTimeout` is the duration of the timeout to optimize the `topWidgetOnResize` callback. You can delay the execution of the callback to allow other resize events to complete by setting this value higher. Setting it to 0 will execute the callback immediately.
