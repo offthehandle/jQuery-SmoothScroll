@@ -2,24 +2,39 @@
 - [jQuery Smooth Scroll](#jquery-smooth-scroll)
 - [Installation](#installation)
     - [Install with NuGet](#install-with-nuget)
+- [Features](#features)
+    - [Turning Features On](#turning-features-on)
+        - [Enable or Disable Features Example](#enable-or-disable-features-example)
 - [Options](#options)
-    - [Container](#container)
-    - [Containers Array](#containers-array)
-    - [Link and Exclude](#link-and-exclude)
-        - [Example 1](#example-1)
-        - [Example 2](#example-2)
-    - [Exclude Within](#exclude-within)
-        - [Example](#example)
+    - [Common Options](#common-options)
+        - [Duration])(#duration)
+        - [Callbacks])(#callbacks)
+    - [Bookmark Options](#bookmark-options)
+        - [Container](#container)
+        - [Containers Array](#containers-array)
+        - [Link and Exclude](#link-and-exclude)
+            - [Exclude Example](#exclude-example)
+            - [Link Example](#link-example)
+        - [Exclude Within](#exclude-within)
+            - [Exclude Within Example](#exclude-within-example)
+        - [Offset Top](#offset-top)
+            - [Offset Top Example](#offset-top-example)
+    - [Page Top Options](#page-top-options)
+        - [Page Top Class](#page-top-class)
+    - [Top Widget Options](#top-widget-options)
+        - [Top Widget Id](#top-widget-id)
+        - [Top Widget Image Url](#top-widget-image-url)
+        - [Top Widget Threshold](#top-widget-threshold)
+        - [Top Widget Setup](#top-widget-setup)
+        - [Top Widget On Resize](#top-widget-on-resize)
+        - [Top Widget Resize Timeout](#top-widget-resize-timeout)
 
 # jQuery Smooth Scroll
 
-Smooth Scroll is a jQuery utility. Its 3 features listed below can be configured and turned on or off as you like.
-1. Bookmarks
-2. To page top links
-3. End of page link
+Smooth Scroll is a jQuery utility. Its [3 features listed below](#features) can be configured and turned on or off as you like.
 
 ## Installation
-Installation is easy and takes only a small amount of configuration. The only dependency is jQuery 1.9.1 or later. The default configuration activates Smooth Scroll on all page links. See below for a basic configuration.
+Installation is easy and takes only a small amount of configuration. The only dependency is jQuery 1.9.1 or later. The default configuration activates bookmarks on all page links. See below for a basic configuration.
 
 ```javascript
 $(document).ready(function () {
@@ -36,6 +51,28 @@ To install Smooth Scroll, run the following command in the Package Manager Conso
 ```
 PM> Install-Package jQuery.SmoothScroll
 ```
+
+## Features
+1. Bookmarks
+2. To page top links
+3. End of page link
+
+Each of the 3 features of Smooth Scroll can be turned on or off. You can use a single feature, different combinations of features or use all 3 features together.
+
+### Turning Features On
+The only feature turned on by default is bookmarks. Each feature has a property that accepts a boolean value `true` or `false` to turn the feature on or off.
+
+##### Enable or Disable Features Example
+```javascript
+$(document).ready(function () {
+  $.smoothScroll({
+      bookmarks: true | false,
+      pageTopLink: true | false,
+      topWidget: true | false,
+  });
+});
+```
+
 
 ## Options
 See below for the complete configuration with default settings.
@@ -68,17 +105,45 @@ See below for the complete configuration with default settings.
   offsetTop: 0
 ```
 
-### Container
+### Common Options
+All 3 features have common options like duration and callbacks. These common options are independently configurable for each feature.
+
+#### Duration
+The `duration`, `pageTopDuration` and `topWidgetDuration` options specify the scroll speed.
+
+#### Callbacks
+Each feature has callbacks that allow you to set JavaScript functions to be executed each time a specific action takes place within the utility. All features execute functions before each Smooth Scroll and after Smooth Scroll. You can find callbacks for specific features below.
+* Bookmarks: `beforeScroll`, `afterScroll`
+* Page Top: `pageTopBeforeScroll`, `pageTopAfterScroll`
+* Top Widget: `pageTopBeforeScroll`, `pageTopAfterScroll`
+
+### Bookmark Options
+* With Defaults
+
+```javascript
+  bookmarks: true,
+  container: 'html, body',
+  containersArray: [],
+  link: 'a',
+  duration: 400,
+  exclude: [],
+  excludeWithin: [],
+  beforeScroll: null,
+  afterScroll: null,
+  offsetTop: 0
+```
+
+#### Container
 The `container` option sets a CSS selector within which all bookmark links will be contained.
 
-### Containers Array
+#### Containers Array
 The `containersArray` option allows an array of strings to be set for multiple containers. When the `container` or `containersArray` option is set, even a match to the `link` selector will not be activated unless it exists inside the specified container(s).
 
-### Link and Exclude
+#### Link and Exclude
 The `link` option specifies selectors that should have Smooth Scroll bookmarks enabled. When you enable `link` on generic elements, like `a`, you can exclude a subset of links that should not be Smooth Scroll enabled using the `exclude` option. See the use cases below.
 * Exclude offsite links in a nav element
 
-#### Example 1
+##### Exclude Example
 
 ###### HTML
 ```html
@@ -103,7 +168,7 @@ $(document).ready(function () {
 
 Another options is to create an opt-in class. Smooth Scroll simply provides options to suit your preference with the most efficient flow in mind for your project.
 
-#### Example 2
+##### Link Example
 
 ###### HTML
 ```html
@@ -126,10 +191,10 @@ $(document).ready(function () {
 });
 ```
 
-### Exclude Within
+#### Exclude Within
 The `excludeWithin` option specifies an inner container of `containersArray` or `container` within which no bookmarks should be enabled. Below is a use case for this option.
 
-#### Example
+##### Exclude Within Example
 
 ###### HTML
 ```html
@@ -174,3 +239,71 @@ $(document).ready(function () {
   });
 });
 ```
+
+#### Offset Top
+The `offsetTop` option is used to adjust the scroll position for fixed navbars. Set this option to the height of your fixed navbar to keep the top of bookmarked content visible on scroll, otherwise it will be hidden behind the navbar.
+
+###### Offset Top Example
+```javascript
+$(document).ready(function () {
+  $.smoothScroll({
+    offsetTop: 50
+  });
+});
+```
+
+#### Callbacks
+The callbacks have 1 argument: `loc`, the href value of the element that triggered the scroll. The callbacks have `this` is set to the specific jQuery Object that triggered the scroll.
+
+### Page Top Options
+The page top feature is used to trigger a scroll to page top from anywhere on the page.
+* With Defaults
+
+```javascript
+  pageTopLink: false,
+  pageTopClass: 'page-top',
+  pageTopDuration: 400,
+  pageTopBeforeScroll: null,
+  pageTopAfterScroll: null,
+```
+
+#### Page Top Class
+The `pageTopClass` specifies the class name that will be used to trigger a scroll to page top. The `.` is not required before the value since it must be a class name.
+
+#### Callbacks
+The callbacks have `this` set to the specific jQuery Object that triggered the scroll.
+
+### Top Widget Options
+The top widget is used to scroll back to page top and appears after the user has reached the bottom of the page, making it available when needed. It is created programmatically and provides some options to configure its setup.
+* With Defaults
+
+```javascript
+  topWidget: false,
+  topWidgetId: 'scroll-to-top',
+  topWidgetImageUrl: '/Content/images/smooth_scroll_arrow.png',
+  topWidgetThreshold: 50,
+  topWidgetDuration: 400,
+  topWidgetSetup: null,
+  topWidgetBeforeScroll: null,
+  topWidgetAfterScroll: null,
+  topWidgetOnResize: null,
+  topWidgetResizeTimeout: 250,
+```
+
+#### Top Widget Id
+The `topWidgetId` specifies the id of the top widget element. The `#` is not required before the value since it must be an id.
+
+#### Top Widget Image Url
+The `topWidgetImageUrl` specifies the path of the image use as the scroll top arrow. An image is provided. If you use an image with a different name or location, you must update this option.
+
+#### Top Widget Threshold
+The `topWidgetThreshold` specifies the number of pixels the scroll position is from the bottom of the page when the widget appears.
+
+#### Top Widget Setup
+The `topWidgetSetup` is a callback. It fires on page start after the widget is created. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
+
+#### Top Widget On Resize
+The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
+
+#### Top Widget Resize Timeout
+The `topWidgetResizeTimeout` is the duration of a timeout to optimize the `topWidgetOnResize` callback. You can delay the execution of the callback to allow other resize events to complete by setting this value higher. Setting it to 0 will execute the callback immediately.
