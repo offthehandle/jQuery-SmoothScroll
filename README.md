@@ -7,8 +7,8 @@
         - [Enable or Disable Features Example](#enable-or-disable-features-example)
 - [Options](#options)
     - [Common Options](#common-options)
-        - [Duration])(#duration)
-        - [Callbacks])(#callbacks)
+        - [Duration](#duration)
+        - [Callbacks](#callbacks)
     - [Bookmark Options](#bookmark-options)
         - [Container](#container)
         - [Containers Array](#containers-array)
@@ -60,7 +60,7 @@ PM> Install-Package jQuery.SmoothScroll
 Each of the 3 features of Smooth Scroll can be turned on or off. You can use a single feature, different combinations of features or use all 3 features together.
 
 ### Turning Features On
-The only feature turned on by default is bookmarks. Each feature has a property that accepts a boolean value `true` or `false` to turn the feature on or off.
+The only feature turned on by default is bookmarks. Each feature has a property that accepts a boolean value - `true` or `false` - to turn the feature on or off.
 
 ##### Enable or Disable Features Example
 ```javascript
