@@ -8,6 +8,8 @@
     - [Exclude](#exclude)
         - [Example 1](#example-1)
         - [Example 2](#example-2)
+    - [Exclude Within](#exclude-within)
+        - [Example](#example)
 
 # jQuery Smooth Scroll
 
