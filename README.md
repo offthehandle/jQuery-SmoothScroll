@@ -134,13 +134,13 @@ Each feature has callbacks that allow you to set JavaScript functions to be exec
 ```
 
 #### Container
-The `container` option sets a CSS selector within which all bookmark links will be contained.
+The `container` option sets a CSS selector within which to look for all bookmark links.
 
 #### Containers Array
-The `containersArray` option allows an array of strings to be set for multiple containers. When the `container` or `containersArray` option is set, even a match to the `link` selector will not be activated unless it exists inside the specified container(s).
+The `containersArray` option allows an array of strings to be set for multiple containers. When the `container` or `containersArray` option is set, even a match to the `link` selector will not be activated if it is not found inside the container(s).
 
 #### Link and Exclude
-The `link` option specifies selectors that should have Smooth Scroll bookmarks enabled. When you enable `link` on generic elements, like `a`, you can exclude a subset of links that should not be Smooth Scroll enabled using the `exclude` option. See the use cases below.
+The `link` option specifies selectors that should have Smooth Scroll bookmarks enabled. When you enable `link` on generic elements - like `a` - you can exclude a subset of links that should not be Smooth Scroll enabled using the `exclude` option. See the use cases below.
 * Exclude offsite links in a nav element
 
 ##### Exclude Example
@@ -166,7 +166,7 @@ $(document).ready(function () {
 });
 ```
 
-Another options is to create an opt-in class. Smooth Scroll simply provides options to suit your preference with the most efficient flow in mind for your project.
+Another option is to create an opt-in class. Smooth Scroll simply provides options to suit your preference with the most efficient flow in mind for your project.
 
 ##### Link Example
 
