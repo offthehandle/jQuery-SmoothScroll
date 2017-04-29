@@ -112,7 +112,7 @@ All 3 features have common options like duration and callbacks. These common opt
 The `duration`, `pageTopDuration` and `topWidgetDuration` options specify the scroll speed.
 
 #### Callbacks
-Each feature has callbacks that allow you to set JavaScript functions to be executed each time a specific action takes place within the utility. All features execute functions before each Smooth Scroll and after Smooth Scroll. You can find callbacks for specific features below.
+Each feature has callbacks that allow you to set JavaScript functions to be executed each time a specific action takes place within the utility. All features execute functions before and after each Smooth Scroll. You can find callbacks for specific features below.
 * Bookmarks: `beforeScroll`, `afterScroll`
 * Page Top: `pageTopBeforeScroll`, `pageTopAfterScroll`
 * Top Widget: `pageTopBeforeScroll`, `pageTopAfterScroll`
