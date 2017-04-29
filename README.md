@@ -13,7 +13,7 @@
 
 Smooth Scroll is a jQuery utility. Its 3 features listed below can be configured and turned on or off as you like.
 1. Bookmarks
-2. Top of page links
+2. To page top links
 3. End of page link
 
 ## Installation
@@ -120,6 +120,55 @@ $(document).ready(function () {
   $.smoothScroll({
     container: 'nav',
     link: '.smooth-scroll'
+  });
+});
+```
+
+### Exclude Within
+The `excludeWithin` option specifies an inner container of `containersArray` or `container` within which no bookmarks should be enabled. Below is a use case for this option.
+
+#### Example
+
+###### HTML
+```html
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="nav navbar-nav">
+        <li><a href="/#section-1">Section 1</a></li>
+        <li><a href="/#section-2">Section 2</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Plan Options <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/basic-plan.html">Basic Plan</a></li>
+            <li><a href="/pro-plan.html">Pro Plan</a></li>
+            <li><a href="/premium-plan.html">Premium Plan</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
+
+###### Smooth Scroll Options
+```javascript
+$(document).ready(function () {
+  $.smoothScroll({
+    container: '#nav',
+    excludeWithin: '.dropdown'
   });
 });
 ```
