@@ -306,10 +306,10 @@ The `topWidgetThreshold` specifies the number of pixels the scroll position is f
 #### Top Widget Callbacks
 
 ##### Top Widget Setup
-The `topWidgetSetup` is a callback. It fires on page start after the widget is created. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
+The `topWidgetSetup` is a callback. It fires on page start after the widget is created. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$('#scroll-to-top')`.
 
 ##### Top Widget On Resize
-The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$(#scroll-to-top)`.
+The `topWidgetOnResize` is a callback. It fires on page resize to provide a hook for positioning the top widget. The value of `this` is set to the jQuery Object of the top widget by its CSS id; e.g. `$('#scroll-to-top')`.
 
 ###### Top Widget On Resize Example
 ```javascript
