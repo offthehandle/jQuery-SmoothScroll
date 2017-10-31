@@ -25,13 +25,13 @@
          -o-border-radius: 50px;
     border-radius: 50px;
     opacity: 0.4;
-    filter: ~"alpha(opacity = 40)";
+    filter: alpha(opacity=40);
     padding: 10px;
 
     &:hover,
     &:focus,
     &:active {
         opacity: 1;
-        filter: ~"alpha(opacity = 100)";
+        filter: alpha(opacity=100);
     }
 }
